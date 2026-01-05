@@ -1,2 +1,5 @@
 #!/bin/bash
-uvicorn app:app --host 0.0.0.0 --port $PORT
+echo "🚀 Iniciando Fedelabs API..."
+echo "📚 Documentación: http://localhost:8000/docs"
+echo ""
+python run.py
