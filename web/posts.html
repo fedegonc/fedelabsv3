@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts - Fedelabs</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/posts.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">Fedelabs</a>
+            <div class="nav-links">
+                <a href="/projects.html" class="nav-link">Projects</a>
+                <a href="/posts.html" class="nav-link active">Posts</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Posts</h1>
+            <p class="page-subtitle">Pensamiento técnico y decisiones de diseño</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="posts-main">
+        <div class="container">
+            <div class="posts-layout">
+                <!-- Posts List -->
+                <div class="posts-list">
+                    <article class="post-card" data-category="arquitectura">
+                        <div class="post-header">
+                            <time datetime="2024-03-12" class="post-date">12 Mar 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">Clean Code no es sobre código bonito</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            Por qué el código "limpio" que te enseñaron puede ser perjudicial para tu productividad y la de tu equipo.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Arquitectura</span>
+                            <span class="post-read-time">5 min read</span>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="arquitectura">
+                        <div class="post-header">
+                            <time datetime="2024-03-08" class="post-date">8 Mar 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">Microservicios: Cuándo y por qué NO usarlos</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            La decisión de dividir tu aplicación en partes más pequeñas no siempre es la correcta. Aprende a identificar cuándo es over-engineering.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Arquitectura</span>
+                            <span class="post-read-time">8 min read</span>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="databases">
+                        <div class="post-header">
+                            <time datetime="2024-03-03" class="post-date">3 Mar 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">PostgreSQL vs MongoDB: La guía definitiva</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            Elegí la base de datos correcta para tu próximo proyecto. Análisis real sin fanatismos ni marketing.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Databases</span>
+                            <span class="post-read-time">10 min read</span>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="performance">
+                        <div class="post-header">
+                            <time datetime="2024-02-28" class="post-date">28 Feb 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">10 errores de performance que cometen los juniors</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            Los errores más comunes que matan el rendimiento de tus aplicaciones y cómo evitarlos desde el inicio.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Performance</span>
+                            <span class="post-read-time">7 min read</span>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="python">
+                        <div class="post-header">
+                            <time datetime="2024-02-25" class="post-date">25 Feb 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">FastAPI vs Django: Cuándo usar cada uno</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            No es una competencia. Son herramientas diferentes para problemas diferentes. Aprende a elegir sabiamente.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Python</span>
+                            <span class="post-read-time">6 min read</span>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="testing">
+                        <div class="post-header">
+                            <time datetime="2024-02-20" class="post-date">20 Feb 2024</time>
+                            <h3 class="post-title">
+                                <a href="/post-detail.html">Testing en producción: Cómo hacerlo sin romper nada</a>
+                            </h3>
+                        </div>
+                        <p class="post-excerpt">
+                            Los tests no deberían vivir solo en CI/CD. Estrategias reales para testing en ambientes de producción.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-category">Testing</span>
+                            <span class="post-read-time">9 min read</span>
+                        </div>
+                    </article>
+
+                    <!-- Load More -->
+                    <div class="load-more">
+                        <button class="btn btn-outline" id="loadMoreBtn">Posts más antiguos →</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-section">
+                        <h3>Categorías</h3>
+                        <ul class="category-list">
+                            <li>
+                                <a href="#" class="category-link active" data-category="all">
+                                    Todos <span class="count">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link" data-category="arquitectura">
+                                    Arquitectura <span class="count">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link" data-category="performance">
+                                    Performance <span class="count">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link" data-category="databases">
+                                    Databases <span class="count">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link" data-category="python">
+                                    Python <span class="count">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link" data-category="testing">
+                                    Testing <span class="count">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-section">
+                        <h3>Posts populares</h3>
+                        <ul class="popular-posts">
+                            <li>
+                                <a href="/post-detail.html">Clean Code no es sobre código bonito</a>
+                                <span class="meta">5 min • 2.3k views</span>
+                            </li>
+                            <li>
+                                <a href="/post-detail.html">PostgreSQL vs MongoDB</a>
+                                <span class="meta">10 min • 1.8k views</span>
+                            </li>
+                            <li>
+                                <a href="/post-detail.html">Microservicios: Cuándo NO usarlos</a>
+                                <span class="meta">8 min • 1.5k views</span>
+                            </li>
+                            <li>
+                                <a href="/post-detail.html">10 errores de performance</a>
+                                <span class="meta">7 min • 1.2k views</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="sidebar-section">
+                        <h3>Buscar</h3>
+                        <div class="search-box">
+                            <input type="text" placeholder="Buscar posts..." class="search-input">
+                            <button class="search-btn">→</button>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-section newsletter">
+                        <h3>📮 Newsletter</h3>
+                        <p>Recibe nuevos posts en tu email</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="tu@email.com" required>
+                            <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        </form>
+                        <p class="newsletter-note">Sin spam, solo posts técnicos de valor</p>
+                    </div>
+
+                    <!-- RSS -->
+                    <div class="sidebar-section">
+                        <a href="/rss.xml" class="rss-link">
+                            <span class="rss-icon">📡</span>
+                            Suscribirse a RSS
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2024 Fedelabs</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/fedelabs" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://twitter.com/fedelabs" target="_blank" class="footer-link">Twitter</a>
+                    <a href="mailto:hola@fedelabs.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/posts-api.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fedelabs - Backend sin humo</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">Fedelabs</a>
+            <div class="nav-links">
+                <a href="/projects.html" class="nav-link">Projects</a>
+                <a href="/posts.html" class="nav-link">Posts</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Backend sin humo</h1>
+            <p class="hero-subtitle">Arquitectura limpia, código real</p>
+            <div class="hero-ctas">
+                <a href="/projects.html" class="btn btn-primary">Ver Proyectos</a>
+                <a href="/posts.html" class="btn btn-secondary">Leer Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">¿Quién soy?</h2>
+            <p class="about-text">
+                Soy un desarrollador backend enfocado en construir APIs robustas y sistemas que escalan. 
+                Sin frameworks mágicos, sin arquitectura sobre-diseñada. Solo código que funciona en producción.
+            </p>
+            <div class="skills">
+                <div class="skill-item">
+                    <h3>APIs escalables</h3>
+                    <p>FastAPI, REST, GraphQL</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Arquitectura limpia</h3>
+                    <p>Patrones sólidos, código mantenible</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Performance</h3>
+                    <p>Optimización de consultas, caching</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Producción</h3>
+                    <p>Docker, CI/CD, monitoring</p>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Redis</span>
+                <span class="tech-badge">AWS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="recent-projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Recientes</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>API RESTful para E-commerce</h3>
+                    <p>Sistema de gestión de inventarios con 100k+ productos</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">FastAPI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link">Repo</a>
+                        <a href="#" class="link">Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Microservicios de Analytics</h3>
+                    <p>Procesamiento de eventos en tiempo real</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Redis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link">Repo</a>
+                        <a href="#" class="link">Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Pipeline de Data Processing</h3>
+                    <p>ETL escalable para millones de registros</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Airflow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link">Repo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="/projects.html" class="btn btn-outline">Ver todos los proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts -->
+    <section class="recent-posts">
+        <div class="container">
+            <h2 class="section-title">Posts Recientes</h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <h3>Clean Code no es sobre código bonito</h3>
+                    <p>Por qué el código "limpio" que te enseñan puede ser perjudicial</p>
+                    <div class="post-meta">
+                        <span class="post-time">5 min read</span>
+                        <span class="post-category">Arquitectura</span>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <h3>Decisiones de diseño en APIs REST</h3>
+                    <p>Cómo tomar las decisiones correctas al diseñar tu API</p>
+                    <div class="post-meta">
+                        <span class="post-time">8 min read</span>
+                        <span class="post-category">API Design</span>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <h3>PostgreSQL vs MongoDB en 2024</h3>
+                    <p>La guía definitiva para elegir tu base de datos</p>
+                    <div class="post-meta">
+                        <span class="post-time">10 min read</span>
+                        <span class="post-category">Databases</span>
+                    </div>
+                </article>
+            </div>
+            <div class="section-cta">
+                <a href="/posts.html" class="btn btn-outline">Ver todos los posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2024 Fedelabs</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/fedelabs" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://twitter.com/fedelabs" target="_blank" class="footer-link">Twitter</a>
+                    <a href="mailto:hola@fedelabs.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/home-api.js"></script>
+</body>
+</html>
