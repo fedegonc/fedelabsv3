@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, status
 from src.domain.entities import Post
 from src.domain.enums import PostType, PostStatus
-from src.presentation.dto import (
+from api.schemas import (
     PostResponse,
     PostCreate,
     PostUpdate

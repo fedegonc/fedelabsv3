@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from src.domain.entities import Profile
-from src.presentation.dto import ProfileResponse, ProfileUpdate
+from api.schemas import ProfileResponse, ProfileUpdate
 
 router = APIRouter(prefix="/profile", tags=["profile"])
 

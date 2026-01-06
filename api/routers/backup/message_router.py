@@ -1,78 +1,13 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 from datetime import datetime
-import sys
-import os
+from api.schemas import MessageCreate, MessageResponse
 
-# Agregar el directorio raíz al path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-
-# Casos de uso (inyectados)
-from use_cases.create_message import CreateMessage
-from use_cases.list_messages import ListMessages
-from use_cases.get_message import GetMessage
-
-# DTOs para la API
-class MessageCreate(BaseModel):
-    text: str
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "text": "Este es un mensaje de ejemplo"
-            }
-        }
-
-
-class MessageResponse(BaseModel):
-    id: int
-    text: str
-    created_at: datetime
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "id": 1,
-                "text": "Este es un mensaje de ejemplo",
-                "created_at": "2024-01-05T18:00:00"
-            }
-        }
-
-
-# Router
 router = APIRouter()
 
-
-# Inyección de dependencias (simulada para el ejemplo)
-# En un proyecto real, usarías un contenedor DI
+# Almacenamiento en memoria (temporal)
 message_storage = []
 next_id = 1
-
-
-class InMemoryMessageRepository:
-    def save(self, message):
-        global next_id
-        message.id = next_id
-        next_id += 1
-        message_storage.append(message)
-        return message
-    
-    def get_by_id(self, message_id):
-        for msg in message_storage:
-            if msg.id == message_id:
-                return msg
-        return None
-    
-    def get_all(self):
-        return message_storage.copy()
-
-
-# Instancias de casos de uso
-repo = InMemoryMessageRepository()
-create_message_use_case = CreateMessage(repo)
-list_messages_use_case = ListMessages(repo)
-get_message_use_case = GetMessage(repo)
 
 
 @router.get(
@@ -99,14 +34,7 @@ get_message_use_case = GetMessage(repo)
 )
 async def get_messages():
     """Endpoint para listar todos los mensajes"""
-    messages = list_messages_use_case.execute()
-    return [
-        MessageResponse(
-            id=msg.id,
-            text=msg.text,
-            created_at=msg.created_at
-        ) for msg in messages
-    ]
+    return message_storage
 
 
 @router.post(
@@ -140,17 +68,22 @@ async def get_messages():
     }
 )
 async def create_message(message: MessageCreate):
-    """Endpoint para crear un mensaje - SIN LÓGICA DE NEGOCIO"""
-    try:
-        # El controller solo delega al caso de uso
-        new_message = create_message_use_case.execute(message.text)
-        return MessageResponse(
-            id=new_message.id,
-            text=new_message.text,
-            created_at=new_message.created_at
-        )
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    """Endpoint para crear un mensaje"""
+    global next_id
+    
+    if not message.text or not message.text.strip():
+        raise HTTPException(status_code=400, detail="El mensaje no puede estar vacío")
+    
+    new_message = MessageResponse(
+        id=next_id,
+        text=message.text,
+        created_at=datetime.now()
+    )
+    
+    message_storage.append(new_message)
+    next_id += 1
+    
+    return new_message
 
 
 @router.get(
@@ -185,14 +118,8 @@ async def create_message(message: MessageCreate):
 )
 async def get_message(message_id: int):
     """Endpoint para obtener un mensaje específico"""
-    try:
-        message = get_message_use_case.execute(message_id)
-        if message:
-            return MessageResponse(
-                id=message.id,
-                text=message.text,
-                created_at=message.created_at
-            )
-        raise HTTPException(status_code=404, detail="Mensaje no encontrado")
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    for message in message_storage:
+        if message.id == message_id:
+            return message
+    
+    raise HTTPException(status_code=404, detail="Mensaje no encontrado")

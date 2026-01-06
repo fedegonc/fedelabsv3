@@ -4,6 +4,32 @@ from pydantic import BaseModel, Field, HttpUrl
 from src.domain.enums import ProjectStatus, PostType, PostStatus
 
 
+class MessageCreate(BaseModel):
+    text: str
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "text": "Este es un mensaje de ejemplo"
+            }
+        }
+
+
+class MessageResponse(BaseModel):
+    id: int
+    text: str
+    created_at: datetime
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "id": 1,
+                "text": "Este es un mensaje de ejemplo",
+                "created_at": "2024-01-05T18:00:00"
+            }
+        }
+
+
 class ProjectResponse(BaseModel):
     id: Optional[int]
     title: str = Field(..., min_length=1, max_length=200)

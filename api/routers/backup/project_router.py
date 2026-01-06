@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, status
 from src.domain.entities import Project
 from src.domain.enums import ProjectStatus
-from src.presentation.dto import (
+from api.schemas import (
     ProjectResponse, 
     ProjectCreate, 
     ProjectUpdate
