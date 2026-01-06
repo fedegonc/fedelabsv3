@@ -66,11 +66,11 @@ class PostUpdate(BaseModel):
 
 class TagResponse(BaseModel):
     id: Optional[int]
-    name: str = Field(..., min_length=1, max_length=20, regex=r'^[a-zA-Z0-9_-]+$')
+    name: str = Field(..., min_length=1, max_length=20, pattern=r'^[a-zA-Z0-9_-]+$')
 
 
 class TagCreate(BaseModel):
-    name: str = Field(..., min_length=1, max_length=20, regex=r'^[a-zA-Z0-9_-]+$')
+    name: str = Field(..., min_length=1, max_length=20, pattern=r'^[a-zA-Z0-9_-]+$')
 
 
 class ProfileResponse(BaseModel):
